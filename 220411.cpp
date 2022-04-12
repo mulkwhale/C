@@ -56,16 +56,6 @@ int main(){
 	returnWon = returnWon % 50;
 	money8 = returnWon / 10;
 	returnWon = returnWon % 10;	
-
-	/*returnWon1000 = returnWon / 1000;
-	returnWon = returnWon - returnWon1000 * 1000;
-	returnWon500 = returnWon / 500;
-	returnWon = returnWon - returnWon1000 * 500;
-	returnWon100 = returnWon / 100;
-	returnWon = returnWon - returnWon1000 * 100;
-	returnWon50 = returnWon / 50;
-	returnWon = returnWon - returnWon1000 * 50;
-	returnWon10 = returnWon / 10;*/
 	
 	printf("5만원: %d개, 1만원: %d개, 5천원: %d개, 1천원: %d개, 5백원: %d개, 100원: %d개, 50원: %d개, 10원: %d개\n", money1, money2, money3, money4, money5, money6, money7, money8);
 	
