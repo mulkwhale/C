@@ -46,7 +46,7 @@ int main(){
 	returnWon = returnWon % 10000;
 	money3 = returnWon / 5000;
 	returnWon = returnWon % 5000;
-	money4 = returnWon / 1000; // returnWon1000. 이 숫자도 상수로
+	money4 = returnWon / 1000;
 	returnWon = returnWon % 1000;
 	money5 = returnWon / 500;
 	returnWon = returnWon % 500;
