@@ -8,89 +8,186 @@ int main(){
 	const float RATE_GBP = 1604.74;
 	int inputWon;
 	int returnWon = 0;
-	int returnWon50000, returnWon10000, returnWon5000, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10;
-	int menuNum = 0;
+	int money1, money2, money3, money4, money5, money6, money7, money8;
 	
-	float outputMoney = 0;
-	int outputMoneyFinal = 0;
+	float outputDollar = 0;
+	int outIntDollar, outIntWon;
+	int outputDollarFinal = 0;
 	
-	float changeRate = 0;
+	float outputYen = 0;
+	int outputYenFinal = 0;
+	
+	float outputEur = 0;
+	int outputEurFinal = 0;
+	
+	float outputCny = 0;
+	int outputCnyFinal = 0;
+	
+	float outputGbp = 0;
+	int outputGbpFinal = 0;
 	
 	printf("환전을 원하는 원화 금액을 입력하세요 : ");
 	scanf("%d", &inputWon);
 	
-	printf("환전할 외화를 선택하세요 (1:USD, 2:JPY, 3:EUR, 4:CNY, 5:GBP) : ");
-	scanf("%d", &menuNum);
-	
 	// 미국달러
-	if(menuNum == 1){
-		changeRate = RATE_USD;
-	}
-	
-	// 일본엔
-	if(menuNum == 2){
-		changeRate = RATE_JPY;
-	}
-	
-	// 유럽유로
-	if(menuNum == 3){
-		changeRate = RATE_EUR;
-	}
-	
-	// 중국위안 
-	if(menuNum == 4){
-		changeRate = RATE_CNY;
-	}
-	
-	// 영국파운드
-	if(menuNum == 5){
-		changeRate = RATE_GBP;
-	}
-	
-	outputMoney = inputWon / changeRate;
-	outputMoneyFinal = outputMoney;
-	returnWon = outputMoney * 100;
+	outputDollar = inputWon / RATE_USD; // 40.55
+	outputDollarFinal = outputDollar;
+	returnWon = outputDollar * 100;
 	returnWon = returnWon % 100;
-	returnWon = returnWon * changeRate / 100;
+	returnWon = returnWon * RATE_USD / 100;
 	returnWon = returnWon / 10 * 10;
 	
-	returnWon50000 = returnWon / 50000;
-	returnWon10000 = (returnWon % 50000) / 10000;
-	returnWon5000 = (returnWon % 10000) / 5000;
-	returnWon1000 = (returnWon % 5000) / 1000;
-	returnWon500 = (returnWon % 1000) / 500;
-	returnWon100 = (returnWon % 500) / 100;
-	returnWon50 = (returnWon % 100) / 50;
-	returnWon10 = (returnWon % 50) / 10;
+	printf("%d 원 -> %10.2f 달러\n", inputWon, outputDollar);
+	printf("%d 달러, % d원을 환전\n", outputDollarFinal, returnWon);
 	
-	printf("%d 원 -> %10.2f ", inputWon, outputMoney);
-	// 미국달러
-	if(menuNum == 1){
-		printf("달러\n달러 ");
-	}
+	money1 = returnWon / 50000;
+	returnWon = returnWon % 50000;
+	money2 = returnWon / 10000;
+	returnWon = returnWon % 10000;
+	money3 = returnWon / 5000;
+	returnWon = returnWon % 5000;
+	money4 = returnWon / 1000; // returnWon1000. 이 숫자도 상수로
+	returnWon = returnWon % 1000;
+	money5 = returnWon / 500;
+	returnWon = returnWon % 500;
+	money6 = returnWon / 100;
+	returnWon = returnWon % 100;
+	money7 = returnWon / 50;
+	returnWon = returnWon % 50;
+	money8 = returnWon / 10;
+	returnWon = returnWon % 10;	
+
+	/*returnWon1000 = returnWon / 1000;
+	returnWon = returnWon - returnWon1000 * 1000;
+	returnWon500 = returnWon / 500;
+	returnWon = returnWon - returnWon1000 * 500;
+	returnWon100 = returnWon / 100;
+	returnWon = returnWon - returnWon1000 * 100;
+	returnWon50 = returnWon / 50;
+	returnWon = returnWon - returnWon1000 * 50;
+	returnWon10 = returnWon / 10;*/
+	
+	printf("5만원: %d개, 1만원: %d개, 5천원: %d개, 1천원: %d개, 5백원: %d개, 100원: %d개, 50원: %d개, 10원: %d개\n", money1, money2, money3, money4, money5, money6, money7, money8);
 	
 	// 일본엔
-	if(menuNum == 2){
-		printf("엔\n엔 ");
-	}
+	outputYen = inputWon / RATE_JPY;
+	outputYenFinal = outputYen;
+	returnWon = outputYen * 100;
+	returnWon = returnWon % 100;
+	returnWon = returnWon * RATE_JPY / 100;
+	returnWon = returnWon / 10 * 10;
+	
+	printf("%d 원 -> %10.2f 엔\n", inputWon, outputYen);
+	printf("%d 엔, % d원을 환전\n", outputYenFinal, returnWon);
+	
+	money1 = returnWon / 50000;
+	returnWon = returnWon % 50000;
+	money2 = returnWon / 10000;
+	returnWon = returnWon % 10000;
+	money3 = returnWon / 5000;
+	returnWon = returnWon % 5000;
+	money4 = returnWon / 1000;
+	returnWon = returnWon % 1000;
+	money5 = returnWon / 500;
+	returnWon = returnWon % 500;
+	money6 = returnWon / 100;
+	returnWon = returnWon % 100;
+	money7 = returnWon / 50;
+	returnWon = returnWon % 50;
+	money8 = returnWon / 10;
+	returnWon = returnWon % 10;	
+	
+	printf("5만원: %d개, 1만원: %d개, 5천원: %d개, 1천원: %d개, 5백원: %d개, 100원: %d개, 50원: %d개, 10원: %d개\n", money1, money2, money3, money4, money5, money6, money7, money8);
 	
 	// 유럽유로
-	if(menuNum == 3){
-		printf("유로\n유로 ");
-	}
+	outputEur = inputWon / RATE_EUR;
+	outputEurFinal = outputEur;
+	returnWon = outputEur * 100;
+	returnWon = returnWon % 100;
+	returnWon = returnWon * RATE_EUR / 100;
+	returnWon = returnWon / 10 * 10;
+	
+	printf("%d 원 -> %10.2f 유로\n", inputWon, outputEur);
+	printf("%d 유로, % d원을 환전\n", outputEurFinal, returnWon);
+	
+	money1 = returnWon / 50000;
+	returnWon = returnWon % 50000;
+	money2 = returnWon / 10000;
+	returnWon = returnWon % 10000;
+	money3 = returnWon / 5000;
+	returnWon = returnWon % 5000;
+	money4 = returnWon / 1000;
+	returnWon = returnWon % 1000;
+	money5 = returnWon / 500;
+	returnWon = returnWon % 500;
+	money6 = returnWon / 100;
+	returnWon = returnWon % 100;
+	money7 = returnWon / 50;
+	returnWon = returnWon % 50;
+	money8 = returnWon / 10;
+	returnWon = returnWon % 10;	
+	
+	printf("5만원: %d개, 1만원: %d개, 5천원: %d개, 1천원: %d개, 5백원: %d개, 100원: %d개, 50원: %d개, 10원: %d개\n", money1, money2, money3, money4, money5, money6, money7, money8);
 	
 	// 중국위안 
-	if(menuNum == 4){
-		printf("위안\n위안 ");
-	}
+	outputCny = inputWon / RATE_CNY;
+	outputCnyFinal = outputCny;
+	returnWon = outputCny * 100;
+	returnWon = returnWon % 100;
+	returnWon = returnWon * RATE_CNY / 100;
+	returnWon = returnWon / 10 * 10;
+	
+	printf("%d 원 -> %10.2f 위안\n", inputWon, outputCny);
+	printf("%d 위안, % d원을 환전\n", outputCnyFinal, returnWon);
+	
+	money1 = returnWon / 50000;
+	returnWon = returnWon % 50000;
+	money2 = returnWon / 10000;
+	returnWon = returnWon % 10000;
+	money3 = returnWon / 5000;
+	returnWon = returnWon % 5000;
+	money4 = returnWon / 1000;
+	returnWon = returnWon % 1000;
+	money5 = returnWon / 500;
+	returnWon = returnWon % 500;
+	money6 = returnWon / 100;
+	returnWon = returnWon % 100;
+	money7 = returnWon / 50;
+	returnWon = returnWon % 50;
+	money8 = returnWon / 10;
+	returnWon = returnWon % 10;	
+	
+	printf("5만원: %d개, 1만원: %d개, 5천원: %d개, 1천원: %d개, 5백원: %d개, 100원: %d개, 50원: %d개, 10원: %d개\n", money1, money2, money3, money4, money5, money6, money7, money8);
 	
 	// 영국파운드
-	if(menuNum == 5){
-		printf("파운드\n파운드 ");
-	}
-	printf("%d, %d원을 환전\n", outputMoneyFinal, returnWon);
+	outputGbp = inputWon / RATE_GBP;
+	outputGbpFinal = outputGbp;
+	returnWon = outputGbp * 100;
+	returnWon = returnWon % 100;
+	returnWon = returnWon * RATE_GBP / 100;
+	returnWon = returnWon / 10 * 10;
 	
-	printf("5만원: %d개, 1만원: %d개, 5천원: %d개, 1천원: %d개, 5백원: %d개, 100원: %d개, 50원: %d개, 10원: %d개\n", returnWon50000, returnWon10000, returnWon5000, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+	printf("%d 원 -> %10.2f 파운드\n", inputWon, outputGbp);
+	printf("%d 파운드, % d원을 환전\n", outputGbpFinal, returnWon);
+	
+	money1 = returnWon / 50000;
+	returnWon = returnWon % 50000;
+	money2 = returnWon / 10000;
+	returnWon = returnWon % 10000;
+	money3 = returnWon / 5000;
+	returnWon = returnWon % 5000;
+	money4 = returnWon / 1000;
+	returnWon = returnWon % 1000;
+	money5 = returnWon / 500;
+	returnWon = returnWon % 500;
+	money6 = returnWon / 100;
+	returnWon = returnWon % 100;
+	money7 = returnWon / 50;
+	returnWon = returnWon % 50;
+	money8 = returnWon / 10;
+	returnWon = returnWon % 10;	
+	
+	printf("5만원: %d개, 1만원: %d개, 5천원: %d개, 1천원: %d개, 5백원: %d개, 100원: %d개, 50원: %d개, 10원: %d개\n", money1, money2, money3, money4, money5, money6, money7, money8);
 	
 	return 0;
 }
